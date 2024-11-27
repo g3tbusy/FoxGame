@@ -2,6 +2,7 @@ package FoxGame;
 
 import java.util.Scanner;
 
+import static FoxGame.App.clearScreen;
 import static FoxGame.Menu.*;
 
 public class Game
@@ -16,6 +17,7 @@ public class Game
 
     public static void startGame()
     {
+        clearScreen();
         System.out.println("""
                 Каждое утро Лисёнок просыпался, завтракал и шёл увидеться с Бельчонком. Это утро не было исключением.\s
                 Лисёнок пришёл на их обычное место встречи, но Бельчонка там не было. Лисёнок ждал, ждал, но так и не смог дождаться своего друга\s
@@ -44,36 +46,9 @@ public class Game
         }
     }
 
-    public static void WIN_GAME()
-    {
-        System.out.println("""
-                Вернувшись домой, Лисёнок нашёл там Бельчонка. Оказалось, что Бельчонок пришёл на место встречи раньше
-                и увидел там рой злобных пчел. Он поспешил предупредить об этом Лисёнка, но они разминулись. Наконец-то друзья нашли друг друга! 
-            """); // Вернувшись домой, Лисёнок нашёл там Бельчонка. Оказалось
-
-        System.out.println("ВЫ ВЫИГРАЛИ!");
-
-        System.out.print("[1] Начать новую игру\n" +
-                "[2] Выйти из игры\n" +
-                "Выбор: ");
-
-        choice = input.nextInt();
-
-        switch (choice)
-        {
-            case 1 -> startGame();
-            case 2 -> System.exit(0);
-            default ->
-            {
-                System.out.println("{!} Ошибка ввода");
-
-                mainMenu();
-            }
-        }
-    }
-
     public static void goSearch()
     {
+        clearScreen();
         System.out.println("""
                 Все лесные жители были заняты своими делами и не обращали внимания на Лисёнка и его проблему. Но вдруг кто нибудь видел Бельчонка... 
                 Лисёнок не знал, что ему делать. Помогите ему.
@@ -102,6 +77,7 @@ public class Game
 
     public static void tryToLearn()
     {
+        clearScreen();
         System.out.println("""
                 Пока Лисёнок принимал решение, лесные жители разошлись кто куда.Остались только Сова и Волк. 
                 Но у Совы бывают проблемы с памятью, а Волк может сильно разозлиться из-за расспросов
@@ -130,6 +106,7 @@ public class Game
 
     public static void askBowl()
     {
+        clearScreen();
         System.out.println("""
                 Сова долго не хотела говорить, но в итоге сказала, что видела испуганного Бельчонка, бежавшего вглубь леса.
                 Все лесные жители знают, что в глубине леса опасно, если Бельчонок там, ему срочно нужна помощь.
@@ -158,6 +135,7 @@ public class Game
 
     public static void trustTheBowl()
     {
+        clearScreen();
         System.out.println("""
                     В глубине леса Лисёнок встретил Медвежонка. Ленивый Медвежонок был готов рассказать все, что знает, 
                     если Лисёнок принесёт ему мёда.
@@ -186,6 +164,7 @@ public class Game
 
     public static void findHoney()
     {
+        clearScreen();
         System.out.println("""
                     Лисёнок быстро нашёл мёд, но вокруг летал рой злобных пчел.
                     Лисёнок всегда боялся пчёл, но и не найти друга он тоже боялся.
@@ -212,34 +191,9 @@ public class Game
         }
     }
 
-    public static void GAME_OVER_3()
-    {
-        System.out.println("""
-                Это была не лучшая идея, Пчёлы покусали Лисёнка, теперь ему самому нужна помощь..
-            """);
-        System.out.println("ВЫ ПРОИГРАЛИ");
-
-        System.out.print("[1] Начать новую игру\n" +
-                "[2] Выйти из игры\n" +
-                "Выбор: ");
-
-        choice = input.nextInt();
-
-        switch (choice)
-        {
-            case 1 -> startGame();
-            case 2 -> System.exit(0);
-            default ->
-            {
-                System.out.println("{!} Ошибка ввода");
-
-                mainMenu();
-            }
-        }
-    }
-
     public static void waitForTheBees()
     {
+        clearScreen();
         System.out.println("""
                     Лисёнок подождал немного, и пчёлы разлетелись. Лисёнок без проблем набрал мёда.
                     Вдруг он понял, что очень голоден. Что же делать?
@@ -268,6 +222,7 @@ public class Game
 
     public static void takeTheHoney()
     {
+        clearScreen();
         System.out.println("""
                     Довольный Медвежонок рассказал Лисёнку, что очень хорошо знает семью Белок и уверен,
                     что Бельчонок никогда не пошёл бы в глубь леса. Он заверял Лисёнка, что Белки не попадают в неприятности,
@@ -295,34 +250,9 @@ public class Game
         }
     }
 
-    public static void GAME_OVER_2()
-    {
-        System.out.println("""
-                Пока Лисёнок ел, злобные пчёлы вернулись и покусали его. Лисёнку нужна помощь, он не сможет продолжить поиски.
-            """);
-        System.out.println("ВЫ ПРОИГРАЛИ");
-
-        System.out.print("[1] Начать новую игру\n" +
-                "[2] Выйти из игры\n" +
-                "Выбор: ");
-
-        choice = input.nextInt();
-
-        switch (choice)
-        {
-            case 1 -> startGame();
-            case 2 -> System.exit(0);
-            default ->
-            {
-                System.out.println("{!} Ошибка ввода");
-
-                mainMenu();
-            }
-        }
-    }
-
     public static void askWolf()
     {
+        clearScreen();
         System.out.println("""
                 Волк оказался вполне дружелюбным, но помочь не смог. Лишь сказал, что маленькому лисенку не стоит бродить по лесу одному.
                 И как теперь поступить?
@@ -349,12 +279,95 @@ public class Game
         }
     }
 
+    public static void WIN_GAME()
+    {
+        clearScreen();
+        System.out.println("""
+                ВЫ ВЫИГРАЛИ!
+                Вернувшись домой, Лисёнок нашёл там Бельчонка. Оказалось, что Бельчонок пришёл на место встречи раньше
+                и увидел там рой злобных пчел. Он поспешил предупредить об этом Лисёнка, но они разминулись. Наконец-то друзья нашли друг друга! 
+            """); // Вернувшись домой, Лисёнок нашёл там Бельчонка. Оказалось
+
+        System.out.print("[1] Начать новую игру\n" +
+                "[2] Выйти из игры\n" +
+                "Выбор: ");
+
+        choice = input.nextInt();
+
+        switch (choice)
+        {
+            case 1 -> startGame();
+            case 2 -> System.exit(0);
+            default ->
+            {
+                System.out.println("{!} Ошибка ввода");
+
+                mainMenu();
+            }
+        }
+    }
+
     public static void GAME_OVER_1()
     {
+        clearScreen();
         System.out.println("""
+                ВЫ ПРОИГРАЛИ!
                 Лисёнок слишком долго плутал по лесу в поисках друга и сам не заметил, как заблудился. Теперь его самого нужно искать...
             """);
-        System.out.println("ВЫ ПРОИГРАЛИ");
+
+        System.out.print("[1] Начать новую игру\n" +
+                "[2] Выйти из игры\n" +
+                "Выбор: ");
+
+        choice = input.nextInt();
+
+        switch (choice)
+        {
+            case 1 -> startGame();
+            case 2 -> System.exit(0);
+            default ->
+            {
+                System.out.println("{!} Ошибка ввода");
+
+                mainMenu();
+            }
+        }
+    }
+
+    public static void GAME_OVER_2()
+    {
+        clearScreen();
+        System.out.println("""
+                ВЫ ПРОИГРАЛИ!
+                Пока Лисёнок ел, злобные пчёлы вернулись и покусали его. Лисёнку нужна помощь, он не сможет продолжить поиски.
+            """);
+
+        System.out.print("[1] Начать новую игру\n" +
+                "[2] Выйти из игры\n" +
+                "Выбор: ");
+
+        choice = input.nextInt();
+
+        switch (choice)
+        {
+            case 1 -> startGame();
+            case 2 -> System.exit(0);
+            default ->
+            {
+                System.out.println("{!} Ошибка ввода");
+
+                mainMenu();
+            }
+        }
+    }
+
+    public static void GAME_OVER_3()
+    {
+        clearScreen();
+        System.out.println("""
+                ВЫ ПРОИГРАЛИ!
+                Это была не лучшая идея, Пчёлы покусали Лисёнка, теперь ему самому нужна помощь..
+            """);
 
         System.out.print("[1] Начать новую игру\n" +
                 "[2] Выйти из игры\n" +

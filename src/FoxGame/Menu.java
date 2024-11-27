@@ -2,6 +2,7 @@ package FoxGame;
 
 import java.util.Scanner;
 
+import static FoxGame.App.*;
 import static FoxGame.Game.*;
 
 public class Menu
@@ -9,6 +10,8 @@ public class Menu
     public static void mainMenu()
     {
         Scanner input = new Scanner(System.in);
+
+        clearScreen();
 
         System.out.print("\n> > > Главное меню < < <\n" +
                 "[1] Начать игру\n" +

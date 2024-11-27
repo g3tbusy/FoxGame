@@ -10,4 +10,9 @@ public class App
         // paragraphAdder();
         mainMenu();
     }
+
+    public static void clearScreen()
+    {
+        System.out.print("\n".repeat(15));
+    }
 }
